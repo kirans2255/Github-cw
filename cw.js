@@ -310,12 +310,67 @@
 
 //swap values
 
-function swapArrayValues(arr) {
-    var temp = arr[0];
-    arr[0] = arr[1];
-    arr[1] = temp;
-}
+// function swapArrayValues(arr) {
+//     var temp = arr[0];
+//     arr[0] = arr[1];
+//     arr[1] = temp;
+// }
 
-var arr = [1, 2];
-swapArrayValues(arr);
-console.log(arr); // Outputs: [2, 1]
+// var arr = [1, 2];
+// swapArrayValues(arr);
+// console.log(arr); // Outputs: [2, 1]
+
+// Template strings
+
+// var templateStrings = function(noun, adjective) {
+//     return `${noun} are ${adjective}` 
+//   }
+
+// console.log(templateStrings("Apples", "red"));
+
+
+
+// function isIntArray(arr) {
+//     if (!Array.isArray(arr)) {
+//         return false;
+//     }
+
+//     for (let num of arr) {
+//         if (typeof num !== 'number' || !Number.isInteger(num)) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// console.log(isIntArray([1, 2, 3]));
+// console.log(isIntArray([1, 2, 3.0]));
+// console.log(isIntArray([1, 2, 3.5]));
+// console.log(isIntArray([]));
+// console.log(isIntArray("not an array"));
+// console.log(isIntArray({}));
+
+
+
+//Log
+
+// function logs(x,a,b) {
+//     let result = Math.log(a) / Math.log(x) + Math.log(b) / Math.log(x);
+//     return result;
+// }
+// console.log(logs(10,100,1000)); 
+
+
+
+function squareDigits(num) {
+    const squared = String(num)
+      .split('')
+      .map(digit => Math.pow(Number(digit), 2))
+      .join('');
+  
+    return Number(squared);
+  }
+  
+  console.log(squareDigits(9119)); 
+  console.log(squareDigits(765));  
+  
