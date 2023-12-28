@@ -362,15 +362,45 @@
 
 
 
-function squareDigits(num) {
-    const squared = String(num)
-      .split('')
-      .map(digit => Math.pow(Number(digit), 2))
-      .join('');
-  
-    return Number(squared);
+// function squareDigits(num) {
+//     const squared = String(num)
+//       .split('')
+//       .map(digit => Math.pow(Number(digit), 2))
+//       .join('');
+
+//     return Number(squared);
+//   }
+
+//   console.log(squareDigits(9119)); 
+//   console.log(squareDigits(765));  
+
+
+//Time convert
+// function timeConvert(num) {
+//   if (num <= 0) return "00:00";
+
+//   let hours = Math.floor(num / 60);
+//   let mins = num % 60;
+
+//   hours = String(hours).padStart(2, '0');
+//   mins = String(mins).padStart(2, '0');
+
+//   return `${hours}:${mins}`;
+// }
+
+// console.log(timeConvert(78));
+
+
+function hammingWeight(x) {
+  let count = 0;
+
+  while (x !== 0) {
+    count += x & 1;
+    x >>>= 1;
   }
-  
-  console.log(squareDigits(9119)); 
-  console.log(squareDigits(765));  
-  
+
+  return count;
+}
+
+console.log(hammingWeight(10));
+console.log(hammingWeight(21)); 
