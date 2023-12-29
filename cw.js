@@ -391,16 +391,87 @@
 // console.log(timeConvert(78));
 
 
-function hammingWeight(x) {
-  let count = 0;
+// function hammingWeight(x) {
+//   let count = 0;
 
-  while (x !== 0) {
-    count += x & 1;
-    x >>>= 1;
+//   while (x !== 0) {
+//     count += x & 1;
+//     x >>>= 1;
+//   }
+
+//   return count;
+// }
+
+// console.log(hammingWeight(10));
+// console.log(hammingWeight(21)); 
+
+
+var humanYearsCatYearsDogYears = function (humanYears) {
+  let catYears = 0;
+  let dogYears = 0;
+
+  if (humanYears === 1) {
+    // First year
+    catYears = 15;
+    dogYears = 15;
+  } else if (humanYears === 2) {
+    // Second year
+    catYears = 24; 
+    dogYears = 24; 
+  } else if (humanYears > 2) {
+    // First two years have different calculations
+    catYears = 24; 
+    dogYears = 24;
+
+    // Subsequent years
+    for (let i = 3; i <= humanYears; i++) {
+      catYears += 4;
+      dogYears += 5;
+    }
   }
 
-  return count;
+  return [humanYears, catYears, dogYears];
 }
 
-console.log(hammingWeight(10));
-console.log(hammingWeight(21)); 
+const humanYears = 5;
+const [human, cat, dog] = humanYearsCatYearsDogYears(humanYears);
+console.log(`Human: ${human} years, Cat: ${cat} years, Dog: ${dog} years`);
+
+
+
+
+function triangle(row) {
+  // If the row has only one color, return that color
+  if (row.length === 1) {
+      return row;
+  }
+
+  // Helper function to determine the resulting color
+  function combineColors(a, b) {
+      if (a === b) return a;
+      if ((a === 'R' && b === 'G') || (a === 'G' && b === 'R')) return 'B';
+      if ((a === 'R' && b === 'B') || (a === 'B' && b === 'R')) return 'G';
+      if ((a === 'G' && b === 'B') || (a === 'B' && b === 'G')) return 'R';
+  }
+
+  let currentRow = row.split('');
+  // Continue merging colors until the triangle color is obtained
+  while (currentRow.length > 1) {
+      let nextRow = [];
+      for (let i = 0; i < currentRow.length - 1; i++) {
+          nextRow.push(combineColors(currentRow[i], currentRow[i + 1]));
+      }
+      currentRow = nextRow;
+  }
+
+  return currentRow[0];
+}
+
+console.log(triangle('RRGBRGBB'));  
+console.log(triangle('RGB'));       
+console.log(triangle('R'));         
+
+
+function removeLowercaseVowels(str) {
+  return str.replace(/[aeiou]/g, '');
+}
