@@ -490,23 +490,116 @@
 // console.log(betterThanAverage(classScores, yourScore)); 
 
 
-function mxdiflg(a1, a2) {
-  if (a1.length === 0 || a2.length === 0) return -1;
+// function mxdiflg(a1, a2) {
+//   if (a1.length === 0 || a2.length === 0) return -1;
 
-  let maxDiff = -1;
+//   let maxDiff = -1;
 
-  for (let x of a1) {
-    for (let y of a2) {
-      const diff = Math.abs(x.length - y.length);
-      if (diff > maxDiff) {
-        maxDiff = diff;
-      }
-    }
-  }
+//   for (let x of a1) {
+//     for (let y of a2) {
+//       const diff = Math.abs(x.length - y.length);
+//       if (diff > maxDiff) {
+//         maxDiff = diff;
+//       }
+//     }
+//   }
 
-  return maxDiff; 
-}
+//   return maxDiff; 
+// }
 
-const a1 = ["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"];
-const a2 = ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"];
-console.log(mxdiflg(a1, a2)); 
+// const a1 = ["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"];
+// const a2 = ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"];
+// console.log(mxdiflg(a1, a2)); 
+
+
+//number from string
+
+// function getNumberFromString(s) {
+//   const cleanedString = s.replace(/\D/g, '');
+//   const number = parseInt(cleanedString, 10);
+//   return number;
+// }
+
+// const inputString = "hell5o wor6ld";
+// const result = getNumberFromString(inputString);
+// console.log(result); 
+
+
+
+
+// function isTriangle(a, b, c) {
+//   if (a <= 0 || b <= 0 || c <= 0) {
+//       return false;
+//   }
+
+//   // Check the Triangle Inequality Theorem
+//   if (a + b <= c || a + c <= b || b + c <= a) {
+//       return false;
+//   }
+
+//   return true;
+
+// }
+
+// console.log(isTriangle(1, 2, 2));  
+// console.log(isTriangle(4, 2, 3));  
+// console.log(isTriangle(2, 2, 2));   
+// console.log(isTriangle(1, 2, 3));   
+// console.log(isTriangle(-5, 1, 3));  
+// console.log(isTriangle(0, 2, 3));   
+// console.log(isTriangle(1, 2, 9)); 
+
+
+// length of sequence
+
+// var lengthOfSequence = function (arr, n) {
+//     var firstIndex = arr.indexOf(n);
+//     var secondIndex = arr.lastIndexOf(n);
+
+//     if (firstIndex === -1 || firstIndex === secondIndex) {   //Attempt error
+//         return 0;
+//     }
+
+//     return secondIndex - firstIndex + 1;
+// };
+
+// console.log(lengthOfSequence([0, -3, 7, 4, 0, 3, 7, 9], 7)); 
+
+
+
+// function longer(s) {
+//     const words = s.split(' ');
+
+//     words.sort((a, b) => {
+//         if (a.length !== b.length) {
+//             return a.length - b.length;
+//         }
+//         return a.localeCompare(b, 'en', { sensitivity: 'case', caseFirst: 'upper' });
+//     });
+//     return words.join(' ');
+// }
+// console.log(longer("Another Green World"));
+// console.log(longer("Darkness on the edge of Town"));
+// console.log(longer("Have you ever Seen the Rain"));
+// console.log(longer("hello Hello")); 
+
+
+
+// function longer(s) {
+//   const words = s.split(' ');
+
+//   words.sort((a, b) => {
+//     if (a.length === b.length) {
+//       return a < b ? -1 : 1; 
+//     }
+//     return a.length - b.length;
+//   });
+//   return words.join(' ');
+// }
+
+// console.log(longer("Another Green World")); 
+// console.log(longer("Darkness on the edge of Town")); 
+// console.log(longer("Have you ever Seen the Rain")); 
+// console.log(longer("hello Hello")); 
+
+  
