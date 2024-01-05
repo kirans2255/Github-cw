@@ -602,4 +602,26 @@
 // console.log(longer("Have you ever Seen the Rain")); 
 // console.log(longer("hello Hello")); 
 
-  
+//Double Char 
+
+// function doubleChar(str) {
+//     return str.split('').map(char => char+char).join('')
+//   }
+
+//   console.log(doubleChar("String"));
+//   console.log(doubleChar("Hello World"));
+//   console.log(doubleChar("1234!_"));
+
+//
+
+
+// function twoDecimalPlaces(number) {
+//     let multiplier = Math.pow(10, 2);
+//     let num = Math.trunc(number * multiplier) / multiplier
+//     return num;
+// }
+// console.log(twoDecimalPlaces(32.8493));
+// console.log(twoDecimalPlaces(14.3286));
+// console.log(twoDecimalPlaces(-7488.83485834983));
+
+
