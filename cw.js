@@ -612,7 +612,7 @@
 //   console.log(doubleChar("Hello World"));
 //   console.log(doubleChar("1234!_"));
 
-//
+/////
 
 
 // function twoDecimalPlaces(number) {
@@ -625,3 +625,43 @@
 // console.log(twoDecimalPlaces(-7488.83485834983));
 
 
+// function magicSum(numbers) {
+    
+//     let sum = 0;
+//     for(let num of numbers){
+
+//         let strNum = num.toString();
+
+//         if(num % 2 !==0 && strNum.includes('3')){
+//             sum+=num;
+//         }
+//     }
+//     return sum;
+//   }
+
+//   console.log(magicSum([3, 12, 5, 8, 30, 13]));
+
+
+
+
+  function maximumProductOfParts(number){
+
+    const str = String(number);
+    let maxProduct = -Infinity;
+
+    for(let i = 1; i < str.length - 1; i++){
+        for(let j = i + 1 ;j < str.length;j++){
+            const p1 = Number(str.substring(0,i));
+            const p2 = Number(str.substring(i,j));
+            const p3 = Number(str.substring(j));
+            
+            const product = p1*p2*p3;
+
+            maxProduct = Math.max(maxProduct,product)
+        }
+    }
+    return maxProduct;
+  }
+
+  console.log(maximumProductOfParts(1234));
+  console.log(maximumProductOfParts(8675309));
