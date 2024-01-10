@@ -583,7 +583,7 @@
 // console.log(longer("Have you ever Seen the Rain"));
 // console.log(longer("hello Hello")); 
 
-
+///////////////////////////////////////////////////////////////////////
 
 // function longer(s) {
 //   const words = s.split(' ');
@@ -612,7 +612,8 @@
 //   console.log(doubleChar("Hello World"));
 //   console.log(doubleChar("1234!_"));
 
-/////
+
+///////////////////////////////////////////////////////////////////////
 
 
 // function twoDecimalPlaces(number) {
@@ -625,8 +626,10 @@
 // console.log(twoDecimalPlaces(-7488.83485834983));
 
 
+/////////////////////////////////////////////////////////////////////////
+
 // function magicSum(numbers) {
-    
+
 //     let sum = 0;
 //     for(let num of numbers){
 
@@ -642,26 +645,64 @@
 //   console.log(magicSum([3, 12, 5, 8, 30, 13]));
 
 
+//////////////////////////////////////////////////////////////////////////
+
+// function maximumProductOfParts(number){
+
+//   const str = String(number);
+//   let maxProduct = -Infinity;
+
+//   for(let i = 1; i < str.length - 1; i++){
+//       for(let j = i + 1 ;j < str.length;j++){
+//           const p1 = Number(str.substring(0,i));
+//           const p2 = Number(str.substring(i,j));
+//           const p3 = Number(str.substring(j));
+
+//           const product = p1*p2*p3;
+
+//           maxProduct = Math.max(maxProduct,product)
+//       }
+//   }
+//   return maxProduct;
+// }
+
+// console.log(maximumProductOfParts(1234));
+// console.log(maximumProductOfParts(8675309));
+
+///////////////////////////////////////////////////////////////////////////////
+
+// Convert a array of numbers into reverse
+
+// function digitize(n) {
+//   const array =  String(n).split("").reverse();
+//   return array.map(Number);
+// }
+
+// console.log(digitize(12345));
+// console.log(digitize(0));
 
 
-  function maximumProductOfParts(number){
 
-    const str = String(number);
-    let maxProduct = -Infinity;
+///////////////////////////////////////////////////////////////////////////////
 
-    for(let i = 1; i < str.length - 1; i++){
-        for(let j = i + 1 ;j < str.length;j++){
-            const p1 = Number(str.substring(0,i));
-            const p2 = Number(str.substring(i,j));
-            const p3 = Number(str.substring(j));
-            
-            const product = p1*p2*p3;
 
-            maxProduct = Math.max(maxProduct,product)
-        }
-    }
-    return maxProduct;
-  }
+//Averages of numbers
 
-  console.log(maximumProductOfParts(1234));
-  console.log(maximumProductOfParts(8675309));
+
+// function averages(numbers) {
+//    if (!numbers || numbers.length <= 1) {
+//         return [];
+//      }  
+
+//      let result= [];
+//      for(let i=0;i<numbers.length -1;i++){
+//       let avg = (numbers[i] + numbers [i+1])/2;
+//       result.push(avg);
+//      }
+//      return result;
+// }
+
+// console.log(averages([ 1, 3, 5, 1, -10]));
+
+
+/////////////////////////////////////////////////////////////////////////////////////
