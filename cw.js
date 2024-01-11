@@ -706,3 +706,51 @@
 
 
 /////////////////////////////////////////////////////////////////////////////////////
+
+
+// Return the Missing Element
+
+
+// function getMissingElement(superImportantArray){
+
+//     const element = [0,1,2,3,4,5,6,7,8,9];
+
+//     for(let i=0;i<element.length;i++){
+//         if(!superImportantArray.includes(element[i])){
+//             return element[i];
+//         }
+//     }
+//     return null;
+//   }
+
+//   console.log(getMissingElement([0,1,2,3,4,5,6,7,8]));
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Sum even numbers
+
+
+function sumEvenNumbers(input) {
+    // Filter out only even numbers from the sequence
+    const evenNumbers = input.filter(number => Number.isInteger(number) && number % 2 === 0);
+
+    // Calculate the sum of even numbers
+    const sum = evenNumbers.reduce((acc, curr) => acc + curr, 0);
+
+    return sum;
+}
+
+// Example usage:
+const sequence1 = [4, 3, 1, 2, 5, 10, 6, 7, 9, 8];
+const result1 = sumEvenNumbers(sequence1);
+console.log(result1);  // Output: 30
+
+const sequence2 = [];
+const result2 = sumEvenNumbers(sequence2);
+console.log(result2);  // Output: 0
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
