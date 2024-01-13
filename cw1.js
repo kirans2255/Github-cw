@@ -28,16 +28,38 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-function sayHello(name, city, state) {
-    const names = name.join(' ');
-    const world = `Hello, ${names}! Welcome to ${city}, ${state}!`;
-    return world;
+// function sayHello(name, city, state) {
+//     const names = name.join(' ');
+//     const world = `Hello, ${names}! Welcome to ${city}, ${state}!`;
+//     return world;
+//   }
+  
+//   const names = ['John', 'Smith'];
+//   const city = 'Phoenix';
+//   const state = 'Arizona';
+  
+//   const world = sayHello(names, city, state);
+//   console.log(world);
+  
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Functional Addition
+
+
+function add(n) {
+  return function(x) {
+    return n + x;
   }
-  
-  const names = ['John', 'Smith'];
-  const city = 'Phoenix';
-  const state = 'Arizona';
-  
-  const world = sayHello(names, city, state);
-  console.log(world);
-  
+}
+
+
+var addOne = add(1);
+console.log(addOne(3)); 
+
+var addThree = add(3);
+console.log(addThree(3)); 
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
