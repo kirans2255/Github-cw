@@ -165,41 +165,170 @@
 /////Another method
 
 
-function latestClock(a, b, c, d) {
-    const times = [
-      `${a}${b}:${c}${d}`,
-      `${a}${b}:${d}${c}`,
-      `${a}${c}:${b}${d}`,
-      `${a}${c}:${d}${b}`,
-      `${a}${d}:${b}${c}`,
-      `${a}${d}:${c}${b}`,
-      `${b}${a}:${c}${d}`,
-      `${b}${a}:${d}${c}`,
-      `${b}${c}:${a}${d}`,
-      `${b}${c}:${d}${a}`,
-      `${b}${d}:${a}${c}`,
-      `${b}${d}:${c}${a}`,
-      `${c}${a}:${b}${d}`,
-      `${c}${a}:${d}${b}`,
-      `${c}${b}:${a}${d}`,
-      `${c}${b}:${d}${a}`,
-      `${c}${d}:${a}${b}`,
-      `${c}${d}:${b}${a}`,
-      `${d}${a}:${b}${c}`,
-      `${d}${a}:${c}${b}`,
-      `${d}${b}:${a}${c}`,
-      `${d}${b}:${c}${a}`,
-      `${d}${c}:${a}${b}`,
-      `${d}${c}:${b}${a}`,
-    ];
-    const time = times.filter(el => {
-      const test = el.split(":")
-      if (test[0] >= 24) return false
-      if (test[1] >= 60) return false
-      return true
-    })
-    time.sort((a, b) =>  (b.split(":")[0] - a.split(":")[0] || b.split(":")[1] - a.split(":")[1]))
-    return time[0]
+// function latestClock(a, b, c, d) {
+//     const times = [
+//       `${a}${b}:${c}${d}`,
+//       `${a}${b}:${d}${c}`,
+//       `${a}${c}:${b}${d}`,
+//       `${a}${c}:${d}${b}`,
+//       `${a}${d}:${b}${c}`,
+//       `${a}${d}:${c}${b}`,
+//       `${b}${a}:${c}${d}`,
+//       `${b}${a}:${d}${c}`,
+//       `${b}${c}:${a}${d}`,
+//       `${b}${c}:${d}${a}`,
+//       `${b}${d}:${a}${c}`,
+//       `${b}${d}:${c}${a}`,
+//       `${c}${a}:${b}${d}`,
+//       `${c}${a}:${d}${b}`,
+//       `${c}${b}:${a}${d}`,
+//       `${c}${b}:${d}${a}`,
+//       `${c}${d}:${a}${b}`,
+//       `${c}${d}:${b}${a}`,
+//       `${d}${a}:${b}${c}`,
+//       `${d}${a}:${c}${b}`,
+//       `${d}${b}:${a}${c}`,
+//       `${d}${b}:${c}${a}`,
+//       `${d}${c}:${a}${b}`,
+//       `${d}${c}:${b}${a}`,
+//     ];
+//     const time = times.filter(el => {
+//       const test = el.split(":")
+//       if (test[0] >= 24) return false
+//       if (test[1] >= 60) return false
+//       return true
+//     })
+//     time.sort((a, b) =>  (b.split(":")[0] - a.split(":")[0] || b.split(":")[1] - a.split(":")[1]))
+//     return time[0]
+//   }
+
+//   console.log(latestClock(1, 9, 8, 3)); 
+
+
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// function additionWithoutCarrying(a, b) {
+//   let result = 0;
+//   let multiplier = 1;
+
+//   while (a > 0 || b > 0) {
+//     result += ((a % 10 + b % 10) % 10) * multiplier;
+//     a = Math.floor(a / 10);
+//     b = Math.floor(b / 10);
+//     multiplier *= 10;
+//   }
+
+//   return result;
+// }
+
+// // Example usage:
+// const a = 456;
+// const b = 1734;
+// const result = additionWithoutCarrying(a, b);
+// console.log(result); // Output: 1180
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// sum of cubes
+
+
+// function sumCubes(n) {
+//   let sum = 0;
+
+//   for (let i = 1; i <= n; i++) {
+//     sum += Math.pow(i, 3);
+//   }
+
+//   return sum;
+// }
+
+// console.log(sumCubes(2)); 
+// console.log(sumCubes(3)); 
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///Count by X
+
+function countBy(x, n) {
+  let z = [];
+
+  for (let i = 1; i <= n; i++) {
+    z.push(x * i);
   }
 
-  console.log(latestClock(1, 9, 8, 3)); 
+  return z;
+}
+
+console.log(countBy(1, 10)); 
+console.log(countBy(2, 5));  
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+function correctTail(body, tail) {
+  // Get the substring of the body from the end, with a length equal to the tail's length
+  const sub = body.substr(body.length - tail.length);
+
+  // Check if the substring is equal to the tail
+  if (sub === tail) {
+      return true;
+  } else {
+      return false;
+  }
+}
+
+// Example usage:
+const isTailCorrect = correctTail("abc", "c");
+console.log(isTailCorrect); // Output: true
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+function makeNegative(number) {
+  // Check if the number is greater than 0
+  if (number > 0) {
+      // Make the number negative
+      return -number;
+  } else {
+      // If the number is already negative or zero, return as is
+      return number;
+  }
+}
+
+// Examples:
+console.log(makeNegative(1));     // Output: -1
+console.log(makeNegative(-5));    // Output: -5
+console.log(makeNegative(0));     // Output: 0
+console.log(makeNegative(0.12));  // Output: -0.12
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//substring
+
+
+
+function nthChar(words) {
+  // Use the map function to extract the nth letter from each word
+  // and then join the resulting array of letters into a single string
+  return words.map((word, index) => word.charAt(index)).join('');
+}
+
+// Example usage:
+const result = nthChar(["yoda", "best", "has"]);
+console.log(result); // Output: "yes"
