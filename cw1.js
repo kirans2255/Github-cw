@@ -522,13 +522,13 @@
 
 // My head is at the wrong end!
 
-function fixTheMeerkat(arr) {
-    return [arr[2],arr[1],arr[0]]
-}
+// function fixTheMeerkat(arr) {
+//     return [arr[2],arr[1],arr[0]]
+// }
 
-const meerkatArray = ["tail", "body", "head"];
-const fixedMeerkat = fixTheMeerkat(meerkatArray);
-console.log(fixedMeerkat); 
+// const meerkatArray = ["tail", "body", "head"];
+// const fixedMeerkat = fixTheMeerkat(meerkatArray);
+// console.log(fixedMeerkat); 
 
 
 
@@ -547,3 +547,161 @@ console.log(fixedMeerkat);
 
 
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Powers of 2
+
+
+// function powersOfTwo(n){
+//   const result = []
+
+//   for(let i=0;i<=n;i++){
+//     result.push(2**i)
+//   }
+//   return result;
+// }
+
+// console.log(powersOfTwo(2));
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Count the Monkeys!
+
+
+// function monkeyCount(n){
+//   const result = []
+
+//   for(let i=1;i<=n;i++){
+//     result.push(i)
+//   }
+//   return result;
+// }
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// function factorial(num) {
+//   if(num===0||num===1){
+//     return 1
+//   }else{
+//     return num*factorial(num-1)
+//   }
+// }
+
+// console.log(factorial(5));
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// const multiplicationTable = function(size) {
+//   const table = [];
+
+//   for (let i = 1; i <= size; i++) {
+//     const row = [];
+//     for (let j = 1; j <= size; j++) {
+//       row.push(i * j);
+//     }
+//     table.push(row);
+//   }
+
+//   return table;
+// };
+
+// const result = multiplicationTable(3);
+// console.log(result);
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// function squareUp(n) {
+//   const result = [];
+
+//   for (let i = 1; i <= n; i++) {
+//     for (let j = 1; j <= n; j++) {
+//       if (j <= i) {
+//         result.push(j);
+//       } else {
+//         result.push(0);
+//       }
+//     }
+//   }
+
+//   return result;
+// }
+// console.log(squareUp(3)); 
+// console.log(squareUp(2)); 
+// console.log(squareUp(4)); 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Split Strings
+
+// function solution(str) {
+//   const pairs = [];
+
+//   for (let i = 0; i < str.length; i += 2) {
+//     const pair = (i + 1 < str.length) ? str.slice(i, i + 2) : str[i] + '_';
+//     pairs.push(pair);
+//   }
+
+//   return pairs;
+// }
+
+
+// console.log(solution('abc')); 
+// console.log(solution('abcdef')); 
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// function grow(x){
+//   return x.reduce((index,value)=>index*value)
+// }
+
+// const l = [1,2,3,4,4,5]
+// console.log(grow(l));
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Fundamentals: Return
+
+
+function add(a,b){
+  return a+b
+}
+
+function divide(a,b){
+  return a/b
+}
+
+function multiply(a,b){
+  return a*b
+}
+
+function mod(a,b){
+  return a%b
+}
+ 
+function exponent(a,b){
+  return Math.pow(a,b)
+}
+  
+function subt(a,b){
+  return a-b
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
