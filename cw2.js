@@ -345,27 +345,161 @@
 
 
 
-function addLetters(...letters) {
-  if (letters.length === 0) {
-    return 'z';
+// function addLetters(...letters) {
+//   if (letters.length === 0) {
+//     return 'z';
+//   }
+
+//   // Convert letters to numerical values
+//   const values = letters.map(letter => letter.charCodeAt(0) - 'a'.charCodeAt(0) + 1);
+
+//   // Calculate the sum and handle overflow
+//   const sum = values.reduce((acc, val) => acc + val, 0) % 26;
+
+//   // Convert back to a letter
+//   const result = String.fromCharCode('a'.charCodeAt(0) + (sum === 0 ? 25 : sum - 1));
+
+//   return result;
+// }
+
+// // Examples
+// console.log(addLetters('a', 'b', 'c')); // 'f'
+// console.log(addLetters('a', 'b')); // 'c'
+// console.log(addLetters('z')); // 'z'
+// console.log(addLetters('z', 'a')); // 'a'
+// console.log(addLetters('y', 'c', 'b')); // 'd'
+// console.log(addLetters()); // 'z'
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\
+
+
+
+// function naughtyOrNice(data) {
+//   let naughtyCount = 0;
+//   let niceCount = 0;
+
+//   for (const month in data) {
+//       for (const day in data[month]) {
+//           if (data[month][day] === 'Naughty') {
+//               naughtyCount++;
+//           } else if (data[month][day] === 'Nice') {
+//               niceCount++;
+//           }
+//       }
+//   }
+
+//   if (naughtyCount > niceCount) {
+//       return 'Naughty!';
+//   } else if (naughtyCount < niceCount) {
+//       return 'Nice!';
+//   } else {
+//       return 'Nice!';
+//   }
+// }
+
+// const data = {
+//   January: { '1': 'Naughty', '2': 'Naughty', '31': 'Nice' },
+//   February: { '1': 'Nice', '2': 'Naughty', '28': 'Nice' },
+//   // ... (fill in data for other months)
+//   December: { '1': 'Nice', '2': 'Nice', '31': 'Naughty' }
+// };
+
+// const santaJudgment = naughtyOrNice(data);
+// console.log(santaJudgment);
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\
+
+
+
+// function pillars(numPill, dist,width) {
+//   if (numPill < 1 || dist < 10 || dist > 30 ||width < 10 ||width > 50) {
+//       return "Invalid input values";
+//   }
+
+//   var totalWidth = (numPill - 2) *width;
+
+//   var totalDistance = (numPill - 1) * dist;
+
+//   var distanceWithoutWidth = totalDistance - totalWidth;
+
+//   return distanceWithoutWidth * 100;
+// }
+
+// var result = pillars(5, 20, 30);
+// console.log(result + " centimeters");
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\
+
+
+
+
+// class Human {
+//   constructor(name) {
+//       this.name = name;
+//   }
+// }
+
+// class Man extends Human {
+//   constructor(name) {
+//       super(name);
+//       this.gender = 'male';
+//   }
+// }
+
+// class Woman extends Human {
+//   constructor(name) {
+//       super(name);
+//       this.gender = 'female';
+//   }
+// }
+
+// class God {
+//   /**
+//    * @returns Human[]
+//    */
+//   static create() {
+//       const adam = new Man('Adam');
+//       const eve = new Woman('Eve');
+//       return [adam, eve];
+//   }
+// }
+
+// const humans = God.create();
+// humans.forEach((human, index) => {
+//   console.log(`Human ${index + 1}: ${human.name} (${human.gender})`);
+//   console.log(human instanceof Human);
+// });
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\
+
+
+
+
+function bubble(arr) {
+  const snapshots = [];
+  const n = arr.length;
+
+  for (let i = 0; i < n - 1; i++) {
+      for (let j = 0; j < n - 1 - i; j++) {
+          if (arr[j] > arr[j + 1]) {
+              [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+              snapshots.push([...arr]);
+          }
+      }
   }
 
-  // Convert letters to numerical values
-  const values = letters.map(letter => letter.charCodeAt(0) - 'a'.charCodeAt(0) + 1);
-
-  // Calculate the sum and handle overflow
-  const sum = values.reduce((acc, val) => acc + val, 0) % 26;
-
-  // Convert back to a letter
-  const result = String.fromCharCode('a'.charCodeAt(0) + (sum === 0 ? 25 : sum - 1));
-
-  return result;
+  return snapshots;
 }
 
-// Examples
-console.log(addLetters('a', 'b', 'c')); // 'f'
-console.log(addLetters('a', 'b')); // 'c'
-console.log(addLetters('z')); // 'z'
-console.log(addLetters('z', 'a')); // 'a'
-console.log(addLetters('y', 'c', 'b')); // 'd'
-console.log(addLetters()); // 'z'
+
+console.log(bubble([1, 2, 4, 3])); 
+console.log(bubble([2, 1, 4, 3])); 
+console.log(bubble([1, 2, 3, 4]));
