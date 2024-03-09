@@ -50,56 +50,56 @@
 // function totalLicks(env) {
 //     const baseLicks = 252;
 //     let totalLicks = baseLicks;
-  
+
 //     let mostChallengingCondition = null;
 //     let maxIncrease = 0;
-  
+
 //     for (const condition in env) {
 //       if (env.hasOwnProperty(condition)) {
 //         const conditionValue = env[condition];
 //         totalLicks += conditionValue;
-  
+
 //         if (conditionValue > maxIncrease) {
 //           maxIncrease = conditionValue;
 //           mostChallengingCondition = condition;
 //         }
 //       }
 //     }
-  
+
 //     let output = `It took ${totalLicks} licks to get to the tootsie roll center of a tootsie pop.`;
-  
+
 //     if (mostChallengingCondition !== null) {
 //       output += ` The toughest challenge was ${mostChallengingCondition}.`;
 //     }
-  
+
 //     return output;
 //   }
-  
+
 //   // Example usage:
 //   const env1 = {
 //     freezingTemps: 30,
 //   };
 //   console.log(totalLicks(env1));
-  
+
 //   const env2 = {
 //     sunnyDay: -20,
 //   };
 //   console.log(totalLicks(env2));
-  
+
 //   const env3 = {};
 //   console.log(totalLicks(env3));
-  
+
 //   const env4 = {
 //     evilWizards: 260,
 //   };
 //   console.log(totalLicks(env4));
-  
+
 //   const env5 = {
 //     noChallenges: 2,
 //   };
 //   console.log(totalLicks(env5));
-  
-  
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -107,10 +107,10 @@
 // function yearDays(year) {
 //     const isLeapYear =
 //       (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
-  
+
 //     return `${year} has ${isLeapYear ? 366 : 365} days`;
 //   }
-  
+
 //   console.log(yearDays(2000));  
 //   console.log(yearDays(0));     
 //   console.log(yearDays(-64));  
@@ -118,47 +118,88 @@
 //   console.log(yearDays(1974));  
 //   console.log(yearDays(-10));  
 //   console.log(yearDays(666));   
-  
 
 
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-  // function deleteNth(arr, n) {
-  //   let countMap = {};
-  
-  //   return arr.filter((num) => {
-  //     countMap[num] = (countMap[num] || 0) + 1;
-  
-  //     if (countMap[num] <= n) {
-  //       return true;
-  //     }
-  
-  //     return false;
-  //   });
-  // }
-  
-  // // Examples
-  // console.log(deleteNth([1, 2, 3, 1, 2, 1, 2, 3], 2));
-  // // Output: [1, 2, 3, 1, 2]
-  
-  // console.log(deleteNth([20, 37, 20, 21], 1));
-  // // Output: [20, 37, 21]
-  
+// function deleteNth(arr, n) {
+//   let countMap = {};
 
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//   return arr.filter((num) => {
+//     countMap[num] = (countMap[num] || 0) + 1;
 
-  function inAscOrder(arr) {
-    for (let i = 0; i < arr.length - 1; i++) {
-      if (arr[i] > arr[i + 1]) {
-        return false; // If any adjacent pair violates the condition, return false
-      }
-    }
-    return true; // If the loop completes without returning false, the array is in ascending order
-  }
+//     if (countMap[num] <= n) {
+//       return true;
+//     }
 
-  console.log(inAscOrder([1, 2, 4, 7, 19])); 
-  console.log(inAscOrder([1, 2, 3, 4, 5])); 
-  console.log(inAscOrder([1, 6, 10, 18, 2, 4, 20])); 
-  console.log(inAscOrder([9, 8, 7, 6, 5, 4, 3, 2, 1])); 
-  
+//     return false;
+//   });
+// }
+
+// // Examples
+// console.log(deleteNth([1, 2, 3, 1, 2, 1, 2, 3], 2));
+// // Output: [1, 2, 3, 1, 2]
+
+// console.log(deleteNth([20, 37, 20, 21], 1));
+// // Output: [20, 37, 21]
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// function inAscOrder(arr) {
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     if (arr[i] > arr[i + 1]) {
+//       return false; // If any adjacent pair violates the condition, return false
+//     }
+//   }
+//   return true; // If the loop completes without returning false, the array is in ascending order
+// }
+
+// console.log(inAscOrder([1, 2, 4, 7, 19]));
+// console.log(inAscOrder([1, 2, 3, 4, 5]));
+// console.log(inAscOrder([1, 6, 10, 18, 2, 4, 20]));
+// console.log(inAscOrder([9, 8, 7, 6, 5, 4, 3, 2, 1]));
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// function gimmeTheLetters(sp) {
+//   // Split the sp string into two letters
+//   const [start, end] = sp.split('-');
+
+//   // Get the character codes of the start and end letters
+//   const startCode = start.charCodeAt(0);
+//   const endCode = end.charCodeAt(0);
+
+//   // Generate an array of character codes in the specified range
+//   const charCodes = Array.from({ length: endCode - startCode + 1 }, (_, index) => startCode + index);
+
+//   // Convert the character codes back to characters and join them into a string
+//   const result = String.fromCharCode(...charCodes);
+
+//   return result;
+// }
+
+// // Test cases
+// console.log(gimmeTheLetters("a-z")); 
+// console.log(gimmeTheLetters("h-o")); 
+// console.log(gimmeTheLetters("Q-Z")); 
+// console.log(gimmeTheLetters("J-J")); 
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+function combineNames(firstName, lastName) {
+  return `${firstName} ${lastName}`;
+}
+
+// Test case
+console.log(combineNames('James', 'Stevens')); 
+
