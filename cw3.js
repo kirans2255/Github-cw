@@ -196,10 +196,61 @@
 
 
 
-function combineNames(firstName, lastName) {
-  return `${firstName} ${lastName}`;
+// function combineNames(firstName, lastName) {
+//   return `${firstName} ${lastName}`;
+// }
+
+// // Test case
+// console.log(combineNames('James', 'Stevens')); 
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// function stonePick(arr) {
+//     // Initialize counts for sticks and cobblestones
+//     let stickCount = 0;
+//     let cobblestoneCount = 0;
+
+//     // Iterate through the array and count sticks and cobblestones
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] === "Sticks") {
+//             stickCount++;
+//         } else if (arr[i] === "Cobblestone") {
+//             cobblestoneCount++;
+//         } else if (arr[i] === "Wood") {
+//             // Convert wood to sticks (1 wood = 4 sticks)
+//             stickCount += 4;
+//         }
+//     }
+
+//     // Calculate the maximum number of stone pickaxes that can be crafted
+//     const maxPickaxes = Math.min(Math.floor(stickCount / 2), Math.floor(cobblestoneCount / 3));
+
+//     return maxPickaxes;
+// }
+
+// // Example usage:
+// const exampleArray = ["Cobblestone", "Cobblestone", "Cobblestone", "Cobblestone", "Cobblestone", "Cobblestone", "Wood"];
+// const result = stonePick(exampleArray);
+// console.log(result);
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+function count(string) {
+    const charCount = {};
+    for (let char of string) {
+        charCount[char] = (charCount[char] || 0) + 1;
+    }
+    return charCount;
 }
 
-// Test case
-console.log(combineNames('James', 'Stevens')); 
+// Example usage:
+const result = count("aba");
+console.log(result);
 
+const emptyResult = count("");
+console.log(emptyResult); 
