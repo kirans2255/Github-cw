@@ -240,17 +240,103 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-function count(string) {
-    const charCount = {};
-    for (let char of string) {
-        charCount[char] = (charCount[char] || 0) + 1;
+// function count(string) {
+//     const charCount = {};
+//     for (let char of string) {
+//         charCount[char] = (charCount[char] || 0) + 1;
+//     }
+//     return charCount;
+// }
+
+// // Example usage:
+// const result = count("aba");
+// console.log(result);
+
+// const emptyResult = count("");
+// console.log(emptyResult); 
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+function reverseMiddle(array) {
+    if (array.length < 4) {
+        throw new Error("Input list must contain at least four elements.");
     }
-    return charCount;
+
+    const middleIndex = Math.floor(array.length / 2);
+    let reversedMiddle = [];
+
+    if (array.length % 2 === 0) { 
+        reversedMiddle.push(array[middleIndex]);
+        reversedMiddle.push(array[middleIndex - 1]);
+    } else {
+        reversedMiddle.push(array[middleIndex + 1]);
+        reversedMiddle.push(array[middleIndex ]);
+        reversedMiddle.push(array[middleIndex - 2]);
+    }
+
+    return reversedMiddle;
+}
+
+const myList = [1, 2, 3, 4, 5, 6];
+console.log(reverseMiddle(myList)); 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+function validateNumber(str) {
+    // Remove dashes and whitespace from the number
+    const cleanedNumber = str.replace(/[-\s]/g, '');
+
+    // Define regular expressions for valid phone number patterns
+    const regEx1 = /^07\d{9}$/; // Begins with '07' followed by 9 digits
+    const regEx2 = /^\+447\d{9}$/; // Begins with '+447' followed by 9 digits
+
+    // Check if the cleaned number matches any of the valid patterns
+    if (regEx1.test(cleanedNumber) || regEx2.test(cleanedNumber)) {
+        return 'In with a chance';
+    } else {
+        return 'Plenty more fish in the sea';
+    }
 }
 
 // Example usage:
-const result = count("aba");
-console.log(result);
+console.log(validateNumber('07454876120')); // Output: In with a chance
+console.log(validateNumber('+447454876120')); 
+console.log(validateNumber('+44--745---487-6120')); 
+console.log(validateNumber('-074-54-87-61-20-'));
+console.log(validateNumber('123456789')); // Output: Plenty more fish in the sea
+console.log(validateNumber('')); // Output: Plenty more fish in the sea
 
-const emptyResult = count("");
-console.log(emptyResult); 
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+function pagesNumberingWithInk(current, numberOfDigits) {
+    let remainingDigits = numberOfDigits;
+    let nextPage = current;
+
+    while (remainingDigits >= nextPage.toString().length) {
+        remainingDigits -= nextPage.toString().length;
+        nextPage++;
+    }
+
+    return nextPage - 1;
+}
+
+console.log(pagesNumberingWithInk(1, 5));
+console.log(pagesNumberingWithInk(21, 5)); 
+console.log(pagesNumberingWithInk(8, 4)); 
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
