@@ -261,82 +261,151 @@
 
 
 
-function reverseMiddle(array) {
-    if (array.length < 4) {
-        throw new Error("Input list must contain at least four elements.");
+// function reverseMiddle(array) {
+//     if (array.length < 4) {
+//         throw new Error("Input list must contain at least four elements.");
+//     }
+
+//     const middleIndex = Math.floor(array.length / 2);
+//     let reversedMiddle = [];
+
+//     if (array.length % 2 === 0) { 
+//         reversedMiddle.push(array[middleIndex]);
+//         reversedMiddle.push(array[middleIndex - 1]);
+//     } else {
+//         reversedMiddle.push(array[middleIndex + 1]);
+//         reversedMiddle.push(array[middleIndex ]);
+//         reversedMiddle.push(array[middleIndex - 2]);
+//     }
+
+//     return reversedMiddle;
+// }
+
+// const myList = [1, 2, 3, 4, 5, 6];
+// console.log(reverseMiddle(myList)); 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// function validateNumber(str) {
+//     // Remove dashes and whitespace from the number
+//     const cleanedNumber = str.replace(/[-\s]/g, '');
+
+//     // Define regular expressions for valid phone number patterns
+//     const regEx1 = /^07\d{9}$/; // Begins with '07' followed by 9 digits
+//     const regEx2 = /^\+447\d{9}$/; // Begins with '+447' followed by 9 digits
+
+//     // Check if the cleaned number matches any of the valid patterns
+//     if (regEx1.test(cleanedNumber) || regEx2.test(cleanedNumber)) {
+//         return 'In with a chance';
+//     } else {
+//         return 'Plenty more fish in the sea';
+//     }
+// }
+
+// // Example usage:
+// console.log(validateNumber('07454876120')); // Output: In with a chance
+// console.log(validateNumber('+447454876120')); 
+// console.log(validateNumber('+44--745---487-6120')); 
+// console.log(validateNumber('-074-54-87-61-20-'));
+// console.log(validateNumber('123456789')); // Output: Plenty more fish in the sea
+// console.log(validateNumber('')); // Output: Plenty more fish in the sea
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// function pagesNumberingWithInk(current, numberOfDigits) {
+//     let remainingDigits = numberOfDigits;
+//     let nextPage = current;
+
+//     while (remainingDigits >= nextPage.toString().length) {
+//         remainingDigits -= nextPage.toString().length;
+//         nextPage++;
+//     }
+
+//     return nextPage - 1;
+// }
+
+// console.log(pagesNumberingWithInk(1, 5));
+// console.log(pagesNumberingWithInk(21, 5)); 
+// console.log(pagesNumberingWithInk(8, 4)); 
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+function going(n) {
+    if (n === 0 || n === 1) return 1;
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+function calculateUn(n) {
+    let partialSum = 0;
+    let result = 0;
+    for (let i = 1; i <= n; i++) {
+        partialSum += going(i);
+        result += partialSum;
+    }
+    return result / going(n);
+}
+
+// Example usage
+console.log(calculateUn(5)); // Output: 1.275
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+function findUniq(arr) {
+    const counts = {};
+
+    for (let num of arr) {
+        counts[num] = (counts[num] || 0) + 1;
     }
 
-    const middleIndex = Math.floor(array.length / 2);
-    let reversedMiddle = [];
+    for (let num in counts) {
+        if (counts[num] === 1) {
+            return parseFloat(num); 
+        }
+    }
+}
 
-    if (array.length % 2 === 0) { 
-        reversedMiddle.push(array[middleIndex]);
-        reversedMiddle.push(array[middleIndex - 1]);
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+function findNextSquare(sq) {
+    const sqrt = Math.sqrt(sq);
+
+    if (Number.isInteger(sqrt)) {
+        return Math.pow(sqrt + 1, 2);
     } else {
-        reversedMiddle.push(array[middleIndex + 1]);
-        reversedMiddle.push(array[middleIndex ]);
-        reversedMiddle.push(array[middleIndex - 2]);
-    }
-
-    return reversedMiddle;
-}
-
-const myList = [1, 2, 3, 4, 5, 6];
-console.log(reverseMiddle(myList)); 
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-function validateNumber(str) {
-    // Remove dashes and whitespace from the number
-    const cleanedNumber = str.replace(/[-\s]/g, '');
-
-    // Define regular expressions for valid phone number patterns
-    const regEx1 = /^07\d{9}$/; // Begins with '07' followed by 9 digits
-    const regEx2 = /^\+447\d{9}$/; // Begins with '+447' followed by 9 digits
-
-    // Check if the cleaned number matches any of the valid patterns
-    if (regEx1.test(cleanedNumber) || regEx2.test(cleanedNumber)) {
-        return 'In with a chance';
-    } else {
-        return 'Plenty more fish in the sea';
+        return -1;
     }
 }
 
-// Example usage:
-console.log(validateNumber('07454876120')); // Output: In with a chance
-console.log(validateNumber('+447454876120')); 
-console.log(validateNumber('+44--745---487-6120')); 
-console.log(validateNumber('-074-54-87-61-20-'));
-console.log(validateNumber('123456789')); // Output: Plenty more fish in the sea
-console.log(validateNumber('')); // Output: Plenty more fish in the sea
-
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-function pagesNumberingWithInk(current, numberOfDigits) {
-    let remainingDigits = numberOfDigits;
-    let nextPage = current;
-
-    while (remainingDigits >= nextPage.toString().length) {
-        remainingDigits -= nextPage.toString().length;
-        nextPage++;
-    }
-
-    return nextPage - 1;
-}
-
-console.log(pagesNumberingWithInk(1, 5));
-console.log(pagesNumberingWithInk(21, 5)); 
-console.log(pagesNumberingWithInk(8, 4)); 
-
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Test cases
+console.log(findNextSquare(121)); // Output: 144
+console.log(findNextSquare(625)); // Output: 676
+console.log(findNextSquare(114)); // Output: -1
