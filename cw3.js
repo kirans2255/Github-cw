@@ -344,27 +344,27 @@
 
 
 
-function going(n) {
-    if (n === 0 || n === 1) return 1;
-    let result = 1;
-    for (let i = 2; i <= n; i++) {
-        result *= i;
-    }
-    return result;
-}
+// function going(n) {
+//     if (n === 0 || n === 1) return 1;
+//     let result = 1;
+//     for (let i = 2; i <= n; i++) {
+//         result *= i;
+//     }
+//     return result;
+// }
 
-function calculateUn(n) {
-    let partialSum = 0;
-    let result = 0;
-    for (let i = 1; i <= n; i++) {
-        partialSum += going(i);
-        result += partialSum;
-    }
-    return result / going(n);
-}
+// function calculateUn(n) {
+//     let partialSum = 0;
+//     let result = 0;
+//     for (let i = 1; i <= n; i++) {
+//         partialSum += going(i);
+//         result += partialSum;
+//     }
+//     return result / going(n);
+// }
 
-// Example usage
-console.log(calculateUn(5)); // Output: 1.275
+// // Example usage
+// console.log(calculateUn(5)); // Output: 1.275
 
 
 
@@ -373,39 +373,135 @@ console.log(calculateUn(5)); // Output: 1.275
 
 
 
-function findUniq(arr) {
-    const counts = {};
+// function findUniq(arr) {
+//     const counts = {};
 
-    for (let num of arr) {
-        counts[num] = (counts[num] || 0) + 1;
+//     for (let num of arr) {
+//         counts[num] = (counts[num] || 0) + 1;
+//     }
+
+//     for (let num in counts) {
+//         if (counts[num] === 1) {
+//             return parseFloat(num); 
+//         }
+//     }
+// }
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+// function findNextSquare(sq) {
+//     const sqrt = Math.sqrt(sq);
+
+//     if (Number.isInteger(sqrt)) {
+//         return Math.pow(sqrt + 1, 2);
+//     } else {
+//         return -1;
+//     }
+// }
+
+// console.log(findNextSquare(121)); 
+// console.log(findNextSquare(625)); 
+// console.log(findNextSquare(114)); 
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// function nextHigherNumberWithSameBits(n) {
+//     // Count the number of trailing zeros
+//     let trailingZeros = 0;
+//     while (((n >> trailingZeros) & 1) === 0) {
+//         trailingZeros++;
+//     }
+
+//     // Count the number of consecutive ones after the trailing zeros
+//     let consecutiveOnes = 0;
+//     while (((n >> (trailingZeros + consecutiveOnes)) & 1) === 1) {
+//         consecutiveOnes++;
+//     }
+
+//     // Flip the rightmost non-trailing zero bit
+//     n |= (1 << (trailingZeros + consecutiveOnes));
+
+//     // Clear all bits to the right of the flipped bit
+//     n &= ~((1 << (trailingZeros + consecutiveOnes)) - 1);
+
+//     // Insert (consecutiveOnes - 1) ones to the right
+//     n |= (1 << (consecutiveOnes - 1)) - 1;
+
+//     return n;
+// }
+
+// console.log(nextHigherNumberWithSameBits(129)); 
+// console.log(nextHigherNumberWithSameBits(127)); 
+// console.log(nextHigherNumberWithSameBits(1));   
+// console.log(nextHigherNumberWithSameBits(323423)); 
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+function mobius(n) {
+    // Function to check if n is a perfect square
+    function isPerfectSquare(num) {
+        let sqrt = Math.sqrt(num);
+        return sqrt === Math.floor(sqrt);
     }
 
-    for (let num in counts) {
-        if (counts[num] === 1) {
-            return parseFloat(num); 
+    // Function to count the number of distinct prime factors
+    function countDistinctPrimeFactors(num) {
+        let count = 0;
+        for (let i = 2; i * i <= num; i++) {
+            if (num % i === 0) {
+                count++;
+                while (num % i === 0) {
+                    num /= i;
+                }
+            }
+        }
+        if (num > 1) {
+            count++;
+        }
+        return count;
+    }
+
+    // Check if n is less than or equal to 1
+    if (n <= 1) {
+        return 0;
+    }
+
+    // Check if n is divisible by the square of any prime number
+    for (let i = 2; i * i <= n; i++) {
+        if (n % (i * i) === 0) {
+            return 0;
         }
     }
-}
 
+    // Count the number of distinct prime factors
+    let numPrimeFactors = countDistinctPrimeFactors(n);
 
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-function findNextSquare(sq) {
-    const sqrt = Math.sqrt(sq);
-
-    if (Number.isInteger(sqrt)) {
-        return Math.pow(sqrt + 1, 2);
+    // Determine the Mobius function based on the number of prime factors
+    if (numPrimeFactors % 2 === 0) {
+        return isPerfectSquare(n) ? 0 : 1;
     } else {
         return -1;
     }
 }
 
-// Test cases
-console.log(findNextSquare(121)); // Output: 144
-console.log(findNextSquare(625)); // Output: 676
-console.log(findNextSquare(114)); // Output: -1
+// Example usage
+let n = 30;
+console.log("Mobius function of", n + ":", mobius(n));
