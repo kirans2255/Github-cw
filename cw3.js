@@ -505,3 +505,26 @@ function mobius(n) {
 // Example usage
 let n = 30;
 console.log("Mobius function of", n + ":", mobius(n));
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+function areaOfPolygonInsideCircle(circleRadius, numberOfSides) {
+    const pi = Math.PI;
+    const area = (numberOfSides * Math.pow(circleRadius, 2) * Math.sin(2 * pi / numberOfSides)) / 2;
+    return parseFloat(area.toFixed(3)); // rounding to 3 decimal places
+}
+
+// Example usage:
+console.log(areaOfPolygonInsideCircle(3, 3)); // Output: 11.691
+console.log(areaOfPolygonInsideCircle(5.8, 7)); // Output: 92.053
+console.log(areaOfPolygonInsideCircle(4, 5)); // Output: 38.042
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
